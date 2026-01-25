@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { motion, HTMLMotionProps } from 'framer-motion'
 
 interface BrandCardProps {
   name: string
@@ -13,73 +14,91 @@ function BrandCard({ name, href }: BrandCardProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-center h-[49px] border border-gray-400 rounded-full px-8 transition-all duration-300 hover:bg-white/10"
+      // w-fit과 mx-auto로 실제 버튼 크기를 중앙에 딱 맞춤
+      className="flex items-center justify-center h-[49px] border border-gray-400 rounded-full px-10 transition-all duration-300 hover:bg-white/10 w-fit mx-auto bg-black/20 backdrop-blur-sm"
     >
-      <span className="text-white text-[15px] font-inter underline underline-offset-4">
-        {name}
-      </span>
-      <svg 
-        className="ml-3 w-5 h-5 text-white" 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        strokeWidth="2"
-      >
-        <path d="M7 17L17 7M17 7H7M17 7V17" />
-      </svg>
+      <div className="flex items-center gap-2">
+        <span className="text-white text-[15px] font-inter underline underline-offset-4">
+          {name}
+        </span>
+        <svg 
+          className="w-4 h-4 text-white" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2"
+        >
+          <path d="M7 17L17 7M17 7H7M17 7V17" />
+        </svg>
+      </div>
     </a>
   )
 }
 
 export default function BrandShowcase() {
+  const fadeInProps: HTMLMotionProps<"div"> = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    viewport: { once: false, margin: "-50px" },
+    transition: { duration: 1.2, ease: "easeInOut" }
+  }
+
   return (
-    <section className="section-mobile min-h-screen relative">
+    <section className="section-mobile min-h-screen relative overflow-hidden bg-black">
       {/* 배경 - 라디얼 그라디언트 */}
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 z-0"
         style={{
-          background: 'radial-gradient(ellipse at center, #666666 0%, #4d4d4d 25%, #333333 50%, #1a1a1a 75%, #000000 100%)'
+          background: 'radial-gradient(ellipse at center, #4d4d4d 0%, #000000 100%)',
+          opacity: 0.6
         }}
       />
       
-      {/* 상단 이미지 - 젠틀몬스터 */}
-      <div className="absolute top-[76px] left-[-37px] w-[464px] h-[245px] opacity-60">
-        <Image
-          src="/images/gentle-monster.png"
-          alt="젠틀몬스터 매장"
-          fill
-          className="object-cover shadow-lg"
-          sizes="464px"
-        />
+      {/* 1. 젠틀몬스터 섹션 */}
+      <div className="absolute top-[76px] left-0 w-full h-[245px] z-10 overflow-hidden">
+        <div className="relative w-full h-full opacity-80">
+          <Image
+            src="/images/gentle-monster.png"
+            alt="젠틀몬스터 매장"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
       </div>
       
       {/* 젠틀몬스터 링크 */}
-      <div className="absolute top-[247px] left-1/2 -translate-x-1/2 w-[364px]">
+      <div className="absolute top-[247px] left-0 w-full z-20">
         <BrandCard name="GENTLE MONSTER" href="https://www.gentlemonster.com" />
       </div>
       
-      {/* 중간 이미지 - 아더에러 */}
-      <div className="absolute top-[428px] left-1/2 -translate-x-1/2 w-[390px] h-[244px] opacity-30">
-        <Image
-          src="/images/ader-error.png"
-          alt="아더에러 매장"
-          fill
-          className="object-cover"
-          sizes="390px"
-        />
+      {/* 2. 아더에러 섹션 - 390px 꽉 차게 수정 */}
+      <div className="absolute top-[428px] left-0 w-full flex justify-center z-10">
+        <div className="relative w-[390px] h-[244px] opacity-90">
+          <Image
+            src="/images/ader-error.png"
+            alt="아더에러 매장"
+            fill
+            className="object-cover"
+            sizes="390px"
+          />
+        </div>
       </div>
       
       {/* 아더에러 링크 */}
-      <div className="absolute top-[606px] left-1/2 -translate-x-1/2 w-[364px]">
+      <div className="absolute top-[606px] left-0 w-full z-20">
         <BrandCard name="ADERERROR" href="https://www.adererror.com" />
       </div>
       
-      {/* 하단 텍스트 */}
-      <div className="absolute bottom-[70px] left-1/2 -translate-x-1/2 text-center">
-        <p className="font-[var(--font-cafe24)] text-[20px] text-white">
+      {/* 3. 하단 "그럼 왜?" 텍스트 */}
+      <motion.div 
+        className="absolute bottom-[70px] left-0 w-full text-center z-30"
+        {...fadeInProps}
+      >
+        <p className="font-[var(--font-cafe24)] text-[22px] text-white tracking-wider">
           그럼 왜?
         </p>
-      </div>
+      </motion.div>
     </section>
   )
 }

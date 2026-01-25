@@ -1,17 +1,16 @@
 'use client'
 
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, HTMLMotionProps } from 'framer-motion'
 
 export default function DeadSpace() {
-  // 공통 애니메이션 설정 (viewport once를 false로 변경)
-  const fadeInUp = {
+  // 타입을 정의해줍니다
+  const fadeInUp: HTMLMotionProps<"div"> = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: false, margin: "-100px" }, // 화면에 보일 때마다 반복
+    viewport: { once: false, margin: "-100px" },
     transition: { duration: 0.8, ease: "easeOut" }
   }
-
   return (
     <>
       {/* 첫 번째 섹션 */}

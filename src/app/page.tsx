@@ -4,6 +4,7 @@ import {
   DeadSpace,
   BrandShowcase,
   WhyKinetic,
+  KineticTrend,
   BrandMessage,
   CustomMade,
   Gallery,
@@ -27,6 +28,9 @@ export default function Home() {
       
       {/* Why Kinetic - 왜 움직이는 조형물인가 */}
       <WhyKinetic />
+      
+      {/* Kinetic Trend - 키네틱 아트 트렌드 및 사례 */}
+      <KineticTrend />
       
       {/* Brand Message - 브랜드 메시지 */}
       <BrandMessage />
