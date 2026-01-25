@@ -14,13 +14,13 @@ export default function WhyKinetic() {
         />
         
         <div className="absolute top-[80px] left-1/2 -translate-x-1/2 w-[343px] text-center z-10">
-          <p className="font-[var(--font-cafe24)] text-[15px] text-white">
+          <p className="mb-8 font-cafe24 text-[16px] leading-relaxed text-white">
             "글로벌 리딩브랜드가 <span className="text-[#ff6262] text-[17px]">'움직이는 조형물'</span>에 집착할까요?"
           </p>
         </div>
         
-        <div className="absolute top-[130px] left-1/2 -translate-x-1/2 text-white text-[81px] font-medium leading-none">.</div>
-        <div className="absolute top-[210px] left-1/2 -translate-x-1/2 text-white text-[46px] font-medium leading-none">.</div>
+        <div className="absolute top-[100px] left-1/2 -translate-x-1/2 text-white text-[81px] font-medium leading-none">.</div>
+        <div className="absolute top-[190px] left-1/2 -translate-x-1/2 text-white text-[46px] font-medium leading-none">.</div>
         <div className="absolute top-[280px] left-1/2 -translate-x-1/2 text-white text-[30px] font-medium leading-none">.</div>
         
         <motion.div 
@@ -45,11 +45,11 @@ export default function WhyKinetic() {
           />
         </motion.div>
         
-        <div className="absolute bottom-[100px] left-1/2 -translate-x-1/2 w-[343px] text-center z-10">
-          <p className="font-[var(--font-cafe24)] text-[15px] text-white leading-relaxed">
+        <div className="absolute bottom-[60px] left-1/2 -translate-x-1/2 w-[343px] text-center z-10">
+          <p className="mb-8 font-cafe24 text-[19px] leading-relaxed text-white">
             동적인 조형물 설치 후 고객 체류 시간 <span className="text-[#ff6262] text-[16px] font-bold">3배</span> 증가
           </p>
-          <p className="font-[var(--font-cafe24)] text-[15px] text-white mt-2">
+          <p className="mb-8 font-cafe24 text-[14px] leading-relaxed text-white">
             SNS 자발적 공유 증가
           </p>
         </div>
@@ -87,7 +87,7 @@ export default function WhyKinetic() {
           viewport={{ once: false }}
           transition={{ duration: 0.8, delay: 0.2 }} // 이미지보다 살짝 늦게 등장
         >
-          <p className="font-[var(--font-cafe24)] text-[13px] text-white leading-relaxed">
+          <p className="fmb-8 font-cafe24 text-[14px] leading-relaxed text-white">
             "2023년 해외 리테일 <span className="text-[#eb2fde] font-bold">저명 저널 연구</span>에 따르면,
             동적인 오브제를 활용한 매장 디자인은 고객 경험과 브랜드 경험을 동시에 최적화하는 핵심 요소로 확인되었습니다."
           </p>

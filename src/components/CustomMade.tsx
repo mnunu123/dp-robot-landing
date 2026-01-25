@@ -24,12 +24,9 @@ export default function CustomMade() {
 
       {/* 3. 상단 텍스트 (참고 이미지 위치) */}
       <div className="relative z-30 pt-24 px-8 text-center animate-fade-in">
-        <p className="font-[var(--font-cafe24)] text-[14px] text-white/90 leading-relaxed">
-          "해외 사례 속 그 독보적인 움직임, 
-          <br />
-          그대로 가져오고 싶으셨나요?
-        </p>
-        <p className="font-[var(--font-cafe24)] text-[14px] text-white/90 mt-2">
+        <p className="mb-8 font-cafe24 text-[13px] leading-relaxed text-whited">
+          "해외 사례 속 그 독보적인 움직임, 그대로 가져오고 싶으셨나요?
+        <br />
           상상하시던 디자인과 기능을 그대로"
         </p>
       </div>
@@ -46,8 +43,8 @@ export default function CustomMade() {
       </div>
 
       {/* 5. 하단 메인 강조 문구 */}
-      <div className="absolute bottom-[25%] inset-x-0 z-30 px-6 text-center">
-        <p className="font-[var(--font-cafe24)] text-[18px] text-white leading-snug drop-shadow-lg">
+      <div className="absolute bottom-[40%] inset-x-0 z-30 px-6 text-center">
+        <p className="mb-8 font-cafe24 text-[20px] leading-relaxed text-white">
           "귀하의 비즈니스 환경에 최적화하여
           <br />
           <span className="text-[#ff6262] text-[20px] font-bold">맞춤 제작</span>합니다."

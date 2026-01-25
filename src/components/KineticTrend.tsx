@@ -38,11 +38,10 @@ export default function KineticTrend() {
           viewport={{ once: false }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="font-[var(--font-cafe24)] text-[14px] text-white leading-relaxed">
+          <p className="mb-8 font-cafe24 text-[14px] leading-relaxed text-white">
             현재 "해외 검색 데이터에서도 <span className="text-[#eb2fde]">'kinetic sculpture'</span> 같은 키워드는
-          </p>
-          <p className="font-[var(--font-cafe24)] text-[14px] text-white">
-            2025년 말에 눈에 띄게 튀어 오르고,
+
+            <span className="text-[20px]">2025년 말에 눈에 띄게 튀어 오르고,</span>"
           </p>
         </motion.div>
 
@@ -76,11 +75,10 @@ export default function KineticTrend() {
           viewport={{ once: false }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <p className="font-[var(--font-cafe24)] text-[14px] text-white leading-relaxed">
-            리테일·공공공간에서 키네틱 설치물이 브랜드 경험을 책임지는
-          </p>
-          <p className="font-[var(--font-cafe24)] text-[14px] text-white">
-            <span className="text-[#eb2fde]">사례가 계속 늘고 있습니다.</span>"
+          <p className="mb-8 font-cafe24 text-[16px] leading-relaxed text-white">
+            리테일공간에서 키네틱 설치물이 브랜드 경험을 책임지는
+
+            <span className="text-[#eb2fde] text-[20px]">사례가 계속 늘고 있습니다.</span>"
           </p>
         </motion.div>
 
@@ -97,7 +95,7 @@ export default function KineticTrend() {
             alt="대림창고 오픈 6일 만에 거래액 6억 돌파"
             fill
             className="object-contain"
-            sizes="283px"
+            sizes="600px"
           />
         </motion.div>
       </section>
@@ -117,11 +115,12 @@ export default function KineticTrend() {
           viewport={{ once: false }}
           transition={{ duration: 0.8 }}
         >
-          <p className="font-[var(--font-cafe24)] text-[14px] text-white leading-relaxed">
+          <p className="mb-8 font-cafe24 text-[14px] leading-relaxed text-white">
             키네틱 아트는 성수동 대림창고나 천안 모나무르 카페처럼
-          </p>
-          <p className="font-[var(--font-cafe24)] text-[14px] text-white">
-            <span className="text-[#eb2fde]">대형 카페 인테리어</span>로 활용되어 화제가 되기도 했습니다.
+            <br />
+            <span className="text-[#eb2fde] text-[20px]">대형 카페 인테리어</span>
+            
+            <span className="text-[14px]">로 활용되어 화제가 되기도 했습니다.</span>
           </p>
         </motion.div>
 
@@ -187,14 +186,12 @@ export default function KineticTrend() {
           viewport={{ once: false }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="font-[var(--font-cafe24)] text-[14px] text-white leading-relaxed">
+          <p className="mb-8 font-cafe24 text-[16px] leading-relaxed text-white">
             다시 말해 움직이고 상호작용하는 오브제가 있을 때,
-          </p>
-          <p className="font-[var(--font-cafe24)] text-[14px] text-white leading-relaxed">
-            매장 이미지는 더 강하게 각인되고 구매 의도
-          </p>
-          <p className="font-[var(--font-cafe24)] text-[14px] text-white">
-            역시 통계적으로 <span className="text-[#eb2fde]">유의미하게 상승합니다.</span>"
+            <br/>
+            매장 이미지는 더 강하게 각인되고 구매의도 역시 
+            <br/>
+            통계적으로 <span className="text-[#eb2fde]">유의미하게 상승합니다.</span>"
           </p>
         </motion.div>
 

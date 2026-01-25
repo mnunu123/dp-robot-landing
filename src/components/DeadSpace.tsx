@@ -102,10 +102,10 @@ export default function DeadSpace() {
           {...fadeInUp}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <p className="font-[var(--font-cafe24)] text-[17px] text-white text-center leading-relaxed">
-            방문자에게 단순 인테리어가 아닌
-            <br />
-            <span className="text-[#ff6262] text-[20px] font-bold">"경험"</span>을 판매합니다.
+          <p className="mb-8 font-cafe24 text-[14px] leading-relaxed text-white">
+            방문자에게 단순 인테리어가 아닌 
+            
+            <span className="text-[#ff6262] text-[20px] font-cafe24"> "경험"</span>을 판매합니다.
           </p>
         </motion.div>
       </section>

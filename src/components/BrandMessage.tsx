@@ -110,8 +110,10 @@ export default function BrandMessage() {
         viewport={{ once: false }}
         transition={{ duration: 0.8 }}
       >
-        <p className="font-[var(--font-cafe24)] text-[21px] text-white leading-relaxed whitespace-pre-wrap">
-          "저희는 당신의 브랜드 무드에 맞춰{'\n'}움직임을 디자인합니다."
+        <p className="mb-8 font-cafe24 text-[20px] leading-relaxed text-white">
+          "저희는 당신의 브랜드 무드에 맞춰 
+          <br />
+          움직임을 디자인합니다."
         </p>
       </motion.div>
       

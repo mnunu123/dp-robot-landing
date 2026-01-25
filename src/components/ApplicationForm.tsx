@@ -3,8 +3,8 @@
 import { useState, FormEvent } from 'react'
 import Image from 'next/image'
 
-// 구글 시트 API 엔드포인트 - 나중에 실제 URL로 교체
-const GOOGLE_SHEET_API_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL'
+// SheetDB API 주소
+const GOOGLE_SHEET_API_URL = 'https://sheetdb.io/api/v1/sg8bocfmaiizq'
 
 interface FormData {
   name: string
@@ -26,50 +26,50 @@ export default function ApplicationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   
-  // 유효성 검사
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {}
-    
     if (!formData.name.trim()) {
       newErrors.name = '이름을 입력해주세요.'
     } else if (formData.name.trim().length < 2) {
       newErrors.name = '이름은 2자 이상 입력해주세요.'
     }
-    
     const phoneDigits = formData.phone.replace(/\D/g, '')
     if (!phoneDigits) {
       newErrors.phone = '연락처를 입력해주세요.'
     } else if (phoneDigits.length < 10 || phoneDigits.length > 11) {
       newErrors.phone = '올바른 연락처 형식이 아닙니다. (10-11자리)'
     }
-    
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
   
-  // 폼 제출 핸들러
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    
     if (!validateForm()) return
-    
     setIsSubmitting(true)
     setSubmitStatus('idle')
     
     try {
-      await fetch(GOOGLE_SHEET_API_URL, {
+      const response = await fetch(GOOGLE_SHEET_API_URL, {
         method: 'POST',
-        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: formData.name.trim(),
-          phone: formData.phone.replace(/\D/g, ''),
-          timestamp: new Date().toISOString(),
+          data: [
+            {
+              name: formData.name.trim(),
+              phone: formData.phone,
+              date: new Date().toLocaleString('ko-KR'),
+            }
+          ]
         }),
       })
       
-      setSubmitStatus('success')
-      setFormData({ name: '', phone: '' })
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({ name: '', phone: '' })
+      } else {
+        setSubmitStatus('error')
+      }
     } catch {
       setSubmitStatus('error')
     } finally {
@@ -77,7 +77,6 @@ export default function ApplicationForm() {
     }
   }
   
-  // 전화번호 자동 포맷팅
   const formatPhoneNumber = (value: string): string => {
     const digits = value.replace(/\D/g, '')
     if (digits.length <= 3) return digits
@@ -87,15 +86,8 @@ export default function ApplicationForm() {
 
   return (
     <section className="section-mobile min-h-screen bg-white relative py-12">
-      {/* 장식 별 */}
       <div className="absolute top-[47px] right-[27px] w-[46px] h-[44px]">
-        <Image
-          src="/images/star-deco.png"
-          alt="장식"
-          fill
-          className="object-contain"
-          sizes="46px"
-        />
+        <Image src="/images/star-deco.png" alt="장식" fill className="object-contain" sizes="46px" />
       </div>
       
       <div className="px-5 pt-24">
@@ -104,65 +96,56 @@ export default function ApplicationForm() {
         </h2>
         
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* 이름 입력 */}
+          {/* 이름 입력 - text-black 추가 */}
           <div className="flex flex-col gap-2">
-            <label htmlFor="name" className="font-inter text-[14px] text-black">
-              이름
-            </label>
+            <label htmlFor="name" className="font-inter text-[14px] text-black">이름</label>
             <input
               type="text"
               id="name"
               value={formData.name}
               onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
               placeholder="이름을 입력해주세요"
-              className={`input-field ${errors.name ? 'border-red-500' : ''}`}
+              // text-black을 명시하여 흰 배경에서도 글자가 보이게 수정
+              className={`w-full h-[50px] border-b text-black ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:border-black outline-none transition-all bg-transparent`}
               disabled={isSubmitting}
             />
             {errors.name && <p className="text-red-500 text-[12px]">{errors.name}</p>}
           </div>
           
-          {/* 연락처 입력 */}
+          {/* 연락처 입력 - text-black 추가 */}
           <div className="flex flex-col gap-2">
-            <label htmlFor="phone" className="font-inter text-[14px] text-black">
-              연락처
-            </label>
+            <label htmlFor="phone" className="font-inter text-[14px] text-black">연락처</label>
             <input
               type="tel"
               id="phone"
               value={formData.phone}
               onChange={(e) => setFormData(prev => ({ ...prev, phone: formatPhoneNumber(e.target.value) }))}
               placeholder="010-0000-0000"
-              className={`input-field ${errors.phone ? 'border-red-500' : ''}`}
+              // text-black을 명시하여 흰 배경에서도 글자가 보이게 수정
+              className={`w-full h-[50px] border-b text-black ${errors.phone ? 'border-red-500' : 'border-gray-300'} focus:border-black outline-none transition-all bg-transparent`}
               disabled={isSubmitting}
               maxLength={13}
             />
             {errors.phone && <p className="text-red-500 text-[12px]">{errors.phone}</p>}
           </div>
           
-          {/* 제출 버튼 */}
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full h-[56px] bg-black text-white font-inter font-semibold text-[16px] rounded-[10px] transition-all duration-300 mt-8
-              ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-800'}
-            `}
+            className={`w-full h-[56px] bg-black text-white font-inter font-semibold text-[16px] rounded-[10px] transition-all duration-300 mt-8 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-800'}`}
           >
             {isSubmitting ? '전송 중...' : '확인'}
           </button>
           
           {submitStatus === 'success' && (
-            <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-              <p className="text-green-700 text-[14px] text-center">
-                신청이 완료되었습니다.
-              </p>
+            <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
+              <p className="text-green-700 text-[14px]">신청이 완료되었습니다. 곧 연락드리겠습니다!</p>
             </div>
           )}
           
           {submitStatus === 'error' && (
-            <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-red-700 text-[14px] text-center">
-                오류가 발생했습니다. 다시 시도해주세요.
-              </p>
+            <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg text-center">
+              <p className="text-red-700 text-[14px]">오류가 발생했습니다. 다시 시도해주세요.</p>
             </div>
           )}
         </form>

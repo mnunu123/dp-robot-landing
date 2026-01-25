@@ -95,8 +95,8 @@ export default function BrandShowcase() {
         className="absolute bottom-[70px] left-0 w-full text-center z-30"
         {...fadeInProps}
       >
-        <p className="font-[var(--font-cafe24)] text-[22px] text-white tracking-wider">
-          그럼 왜?
+        <p className="mb-5 font-cafe24 text-[18px] leading-relaxed text-whiter">
+          그렇다면 왜?
         </p>
       </motion.div>
     </section>

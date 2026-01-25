@@ -41,24 +41,24 @@ export default function BrandIntro() {
       
       <div className="relative z-10 h-full flex flex-col justify-center px-6 py-20">
         {/* 첫 번째 텍스트 */}
-        <div className="text-center mb-16">
-          <p className="font-[var(--font-cafe24)] text-[13px] leading-relaxed text-white">
-            젠틀몬스터와 아더에러를 들어본적 있거나
-            <br />
-            경험해 본적 있으신가요?
-          </p>
-        </div>
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+        <p className="mb-8 font-cafe24 text-[14px] leading-relaxed text-white">
+                    "젠틀몬스터와 아더에러를 들어온벅 있거나,
+                    <br />
+                    경험해 본적 있으신가요?"
+        </p>
+      </div>
         
         {/* 두 번째 텍스트 */}
         <div className="text-center mt-40 mb-16">
-          <p className="font-[var(--font-cafe24)] text-[15px] leading-relaxed text-white">
+          <p className="mb-8 font-cafe24 text-[14px] leading-relaxed text-white">
             그렇다면 그들의 공통점은 무엇일까요?
           </p>
         </div>
         
         {/* 세 번째 텍스트 - 강조 */}
         <div className="text-center mt-40">
-          <p className="font-[var(--font-cafe24)] text-[13px] leading-relaxed text-white">
+          <p className="mb-8 font-cafe24 text-[14px] leading-relaxed text-white">
             그 공통점은 바로 <span className="text-[#ff6262]">동적인 오브제</span>를 통한
             <br />
             끊임없는 감각의 확장을 유지하고 있다는 것입니다.
