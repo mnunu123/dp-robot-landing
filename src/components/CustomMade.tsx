@@ -4,51 +4,64 @@ import Image from 'next/image'
 
 export default function CustomMade() {
   return (
-    <>
-      {/* 맞춤 제작 타이틀 */}
-      <section className="w-full max-w-[416px] mx-auto py-8 bg-black">
-        <div className="text-center">
-          <p className="font-[var(--font-cafe24)] text-[17px] text-white leading-relaxed">
-            "귀하의 비즈니스 환경에 최적화하여 맞춤 제작합니다."
-          </p>
-        </div>
-      </section>
+    <section className="section-mobile min-h-screen relative overflow-hidden bg-black">
+      {/* 1. 배경 그라디언트 */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(to bottom, #060606 20%, #2a2a2a 50%, #060606 85%)'
+        }}
+      />
       
-      {/* 맞춤 제작 상세 */}
-      <section className="section-mobile min-h-screen relative">
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(to bottom, #060606 24.519%, #c9c9c9 67.308%, #636363 100%)'
-          }}
+      {/* 2. 왼쪽 장식 원 - 강제로 왼쪽 벽에 붙이기 */}
+      <div 
+        // [수정] left-[-150px]를 사용하여 400px 너비의 원을 왼쪽 벽 바깥으로 확실히 밀어냈습니다.
+        // 이렇게 하면 빛의 중심이 왼쪽 벽 끝에 걸려 은은하게 퍼집니다.
+        className="absolute top-[35%] left-[-150px] w-[400px] h-[400px] z-10 pointer-events-none"
+      >
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#eb2fde]/50 to-[#00f2fe]/20 blur-[80px] opacity-70" />
+      </div>
+
+      {/* 3. 상단 텍스트 (참고 이미지 위치) */}
+      <div className="relative z-30 pt-24 px-8 text-center animate-fade-in">
+        <p className="font-[var(--font-cafe24)] text-[14px] text-white/90 leading-relaxed">
+          "해외 사례 속 그 독보적인 움직임, 
+          <br />
+          그대로 가져오고 싶으셨나요?
+        </p>
+        <p className="font-[var(--font-cafe24)] text-[14px] text-white/90 mt-2">
+          상상하시던 디자인과 기능을 그대로"
+        </p>
+      </div>
+
+      {/* 4. 중앙 제품 이미지 (투명도 낮춰 배경처럼 활용) */}
+      <div className="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] z-0 opacity-20">
+        <Image
+          src="/images/custom-product.png"
+          alt="맞춤 제작 제품"
+          fill
+          className="object-contain grayscale"
+          sizes="320px"
         />
-        
-        {/* 왼쪽 장식 원 */}
-        <div className="absolute top-[251px] left-[-173px] w-[347px] h-[343px]">
-          <div className="absolute inset-[-20%] rounded-full bg-gradient-to-br from-[#eb2fde]/30 to-transparent blur-3xl" />
-        </div>
-        
-        {/* 상단 텍스트 */}
-        <div className="absolute top-[73px] left-1/2 -translate-x-1/2 w-[370px] text-center z-10">
-          <p className="font-[var(--font-cafe24)] text-[13px] text-white leading-relaxed">
-            "해외 사례 속 그 독보적인 움직임, 그대로 가져오고 싶으셨나요?
-          </p>
-          <p className="font-[var(--font-cafe24)] text-[13px] text-white leading-relaxed">
-            상상하시던 디자인과 기능을 그대로"
-          </p>
-        </div>
-        
-        {/* 제품 이미지 */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px]">
-          <Image
-            src="/images/custom-product.png"
-            alt="맞춤 제작 제품"
-            fill
-            className="object-contain"
-            sizes="300px"
-          />
-        </div>
-      </section>
-    </>
+      </div>
+
+      {/* 5. 하단 메인 강조 문구 */}
+      <div className="absolute bottom-[25%] inset-x-0 z-30 px-6 text-center">
+        <p className="font-[var(--font-cafe24)] text-[18px] text-white leading-snug drop-shadow-lg">
+          "귀하의 비즈니스 환경에 최적화하여
+          <br />
+          <span className="text-[#ff6262] text-[20px] font-bold">맞춤 제작</span>합니다."
+        </p>
+      </div>
+
+      {/* 하단 점 패턴 (디테일 추가) */}
+      <div 
+        className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle, #ffffff 1px, transparent 1px)`,
+          backgroundSize: '24px 24px',
+        }}
+      />
+    </section>
   )
 }

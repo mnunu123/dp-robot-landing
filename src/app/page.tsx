@@ -6,6 +6,7 @@ import {
   WhyKinetic,
   BrandMessage,
   CustomMade,
+  Gallery,
   ApplicationForm,
 } from '@/components'
 
@@ -29,9 +30,13 @@ export default function Home() {
       
       {/* Brand Message - 브랜드 메시지 */}
       <BrandMessage />
-      
+
+      {/* Gallery - 해외 키네틱 아트 사례 */}
+      <Gallery />
+
       {/* Custom Made - 맞춤 제작 안내 */}
       <CustomMade />
+      
       
       {/* Application Form - 신청 폼 */}
       <ApplicationForm />

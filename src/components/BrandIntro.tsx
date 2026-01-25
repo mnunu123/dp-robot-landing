@@ -12,7 +12,8 @@ export default function BrandIntro() {
           background: 'linear-gradient(to bottom, #533820 8.654%, #000000 100%)'
         }}
       />
-      
+      {/* 어둠 필터 */}
+      <div className="absolute inset-0 bg-black/30" />
       {/* 점 패턴 오버레이 */}
       <div 
         className="absolute inset-0 opacity-30"

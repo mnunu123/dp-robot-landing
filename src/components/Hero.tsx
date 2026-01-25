@@ -23,7 +23,7 @@ export default function Hero() {
         preload="auto"
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src="/video/hero-video.mp4" type="video/mp4" />
+        <source src="/videos/hero-video.mp4" type="video/mp4" />
       </video>
 
       {/* 어둠 필터 */}
