@@ -16,7 +16,7 @@ export default function BrandMessage() {
           scale: [1, 1.1, 0.95, 1]
         }}
         transition={{ 
-          duration: 5,
+          duration: 1,
           repeat: Infinity,
           ease: "easeInOut"
         }}
@@ -63,7 +63,7 @@ export default function BrandMessage() {
           scale: [1, 1.08, 0.92, 1]
         }}
         transition={{ 
-          duration: 12,
+          duration: 2,
           repeat: Infinity,
           ease: "easeInOut",
           delay: 0.5
@@ -87,7 +87,7 @@ export default function BrandMessage() {
           scale: [1, 1.1, 0.95, 1]
         }}
         transition={{ 
-          duration: 9,
+          duration: 3,
           repeat: Infinity,
           ease: "easeInOut",
           delay: 2

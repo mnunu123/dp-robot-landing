@@ -1,4 +1,5 @@
 export { default as Hero } from './Hero'
+export { default as BrandChallenge } from './BrandChallenge'
 export { default as BrandIntro } from './BrandIntro'
 export { default as DeadSpace } from './DeadSpace'
 export { default as BrandShowcase } from './BrandShowcase'

@@ -1,9 +1,17 @@
 'use client'
 
 import Image from 'next/image'
+import { motion, HTMLMotionProps } from 'framer-motion'
 
 export default function CustomMade() {
+  const fadeInUp: HTMLMotionProps<"div"> = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: false, margin: "-100px" },
+    transition: { duration: 0.8, ease: "easeOut" }
+  }
   return (
+    
     <section className="section-mobile min-h-screen relative overflow-hidden bg-black">
       {/* 1. 배경 그라디언트 */}
       <div 
@@ -44,11 +52,13 @@ export default function CustomMade() {
 
       {/* 5. 하단 메인 강조 문구 */}
       <div className="absolute bottom-[40%] inset-x-0 z-30 px-6 text-center">
+      <motion.div className="text-center mb-12" {...fadeInUp}>
         <p className="mb-8 font-cafe24 text-[20px] leading-relaxed text-white">
           "귀하의 비즈니스 환경에 최적화하여
           <br />
           <span className="text-[#ff6262] text-[20px] font-bold">맞춤 제작</span>합니다."
         </p>
+        </motion.div>
       </div>
 
       {/* 하단 점 패턴 (디테일 추가) */}

@@ -3,9 +3,38 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
+
+
+
 export default function KineticTrend() {
   return (
     <>
+    {/* 두 번째 섹션 - 연구 결과 및 통계 차트 이미지 추가 */}
+    <section className="section-mobile min-h-screen relative overflow-hidden">
+        <div 
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, #161616 0%, #000000 100%)' }}
+        />
+        <div className="absolute inset-0 bg-black/30" />
+        {/* 중앙 통계 차트 이미지 - 텍스트 위쪽에 배치 */}
+        <motion.div 
+          className="absolute top-[20px] left-5 -translate-x-1/2 w-[350px] h-[220px] z-10"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8 }}
+        >
+          <Image
+            src="/images/Code_Generated_Image.png" // 이미지 파일명 확인
+            alt="키네틱 아트 설치 전후 비교 차트"
+            fill
+            className="object-contain rounded-xl"
+            sizes="350px"
+          />
+        </motion.div>
+
+        
+      </section>
       {/* 첫 번째 섹션 - 키네틱 트렌드 검색 데이터 */}
       <section className="section-mobile min-h-screen relative overflow-hidden">
         <div 
@@ -38,7 +67,7 @@ export default function KineticTrend() {
           viewport={{ once: false }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="mb-8 font-cafe24 text-[14px] leading-relaxed text-white">
+          <p className="mb-8 font-cafe24 text-[14px] leading-relaxed text-white text-center">
             현재 "해외 검색 데이터에서도 <span className="text-[#eb2fde]">'kinetic sculpture'</span> 같은 키워드는
 
             <span className="text-[20px]">2025년 말에 눈에 띄게 튀어 오르고,</span>"
@@ -159,57 +188,7 @@ export default function KineticTrend() {
         </motion.div>
       </section>
 
-      {/* 세 번째 섹션 - 연구 논문 인용 */}
-      <section className="section-mobile min-h-screen relative overflow-hidden bg-black">
-        {/* 연구 논문 이미지 */}
-        <motion.div 
-          className="absolute top-[58px] left-[25px] -translate-x-1/2 w-[340px] h-[444px] z-10"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.8 }}
-        >
-          <Image
-            src="/images/research-paper.png"
-            alt="리테일 디자인 인터랙티브 기술 연구 논문"
-            fill
-            className="object-cover rounded-[34px]"
-            sizes="340px"
-          />
-        </motion.div>
 
-        {/* 하단 텍스트 */}
-        <motion.div 
-          className="absolute top-[550px] left-[25px] -translate-x-1/2 w-[343px] text-center z-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <p className="mb-8 font-cafe24 text-[16px] leading-relaxed text-white">
-            다시 말해 움직이고 상호작용하는 오브제가 있을 때,
-            <br/>
-            매장 이미지는 더 강하게 각인되고 구매의도 역시 
-            <br/>
-            통계적으로 <span className="text-[#eb2fde]">유의미하게 상승합니다.</span>"
-          </p>
-        </motion.div>
-
-        {/* 점 애니메이션 */}
-        <motion.div 
-          className="absolute top-[680px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <span className="text-white text-[39px] font-medium leading-none">.</span>
-          <span className="text-white text-[23px] font-medium leading-none">.</span>
-          <span className="text-white text-[18px] font-medium leading-none">.</span>
-          <span className="text-white text-[13px] leading-none">.</span>
-          <span className="text-white text-[13px] leading-none">.</span>
-        </motion.div>
-      </section>
     </>
   )
 }

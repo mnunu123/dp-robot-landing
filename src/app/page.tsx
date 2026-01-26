@@ -1,5 +1,6 @@
 import {
   Hero,
+  BrandChallenge,
   BrandIntro,
   DeadSpace,
   BrandShowcase,
@@ -17,6 +18,9 @@ export default function Home() {
       {/* Hero Section - 동영상 배경 */}
       <Hero />
       
+      {/* Brand Challenge - 브랜드 도전 과제 */}
+      <BrandChallenge />
+      
       {/* Brand Introduction - 젠틀몬스터/아더에러 소개 */}
       <BrandIntro />
       
@@ -26,8 +30,12 @@ export default function Home() {
       {/* Brand Showcase - 브랜드 링크 카드 */}
       <BrandShowcase />
       
-      {/* Why Kinetic - 왜 움직이는 조형물인가 */}
-      <WhyKinetic />
+
+
+      
+
+            {/* Gallery - 해외 키네틱 아트 사례 */}
+            <Gallery />
       
       {/* Kinetic Trend - 키네틱 아트 트렌드 및 사례 */}
       <KineticTrend />
@@ -35,8 +43,7 @@ export default function Home() {
       {/* Brand Message - 브랜드 메시지 */}
       <BrandMessage />
 
-      {/* Gallery - 해외 키네틱 아트 사례 */}
-      <Gallery />
+
 
       {/* Custom Made - 맞춤 제작 안내 */}
       <CustomMade />
