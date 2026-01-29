@@ -3,7 +3,7 @@ export { default as BrandChallenge } from './BrandChallenge'
 export { default as BrandIntro } from './BrandIntro'
 export { default as DeadSpace } from './DeadSpace'
 export { default as BrandShowcase } from './BrandShowcase'
-export { default as WhyKinetic } from './WhyKinetic'
+
 export { default as KineticTrend } from './KineticTrend'
 export { default as BrandMessage } from './BrandMessage'
 export { default as CustomMade } from './CustomMade'

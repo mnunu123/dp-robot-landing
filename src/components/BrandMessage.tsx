@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function BrandMessage() {
   return (
+    <>
     <section className="section-mobile min-h-screen bg-black relative flex items-center justify-center overflow-hidden">
       {/* 배경 Bokeh 효과들 - 떠다니는 애니메이션 */}
       
@@ -153,6 +154,72 @@ export default function BrandMessage() {
           .
         </motion.span>
       </div>
+      
+      
     </section>
+    <section className="section-mobile min-h-screen relative overflow-hidden">
+        <div 
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom,rgb(12, 12, 12) 0%, #666666 50%,rgb(16, 16, 16) 100%)',
+            filter: 'blur(40px)'  }}
+        />
+        <div className="absolute inset-0 bg-black/30" />
+      
+        <motion.div 
+        className="absolute top-[50px] left-10 -translate-x-1/2 w-[305px] text-center z-10"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8 }}
+      >
+        <p className="mb-8 font-cafe24 text-[20px] leading-relaxed text-[#ff6262]">
+          "가장 많이 물어보시는 3가지"
+        </p>
+      </motion.div>
+
+      <motion.div 
+        className="absolute top-[180px] left-[-1] -translate-x-1/2 w-[390px] text-center z-10"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8 }}
+      >
+        <p className="mb-8 font-cafe24 text-[16px] leading-relaxed text-white">
+          "Q)설치가 복잡한가요?" <br />
+          A)아니요, 일반 가전제품처럼 전원만 연결하면 됩니다.
+        </p>
+      </motion.div>
+
+      <motion.div 
+        className="absolute top-[360px] left-[-1]  -translate-x-1/2 w-[390px] text-center z-10"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8 }}
+      >
+        <p className="mb-8 font-cafe24 text-[16px] leading-relaxed text-white">
+        Q)커스텀이 가능한가요?
+        <br />
+        A)네, 브랜드 컬러와 원하는 동작을 모두 맞춤 제작해 드립니다.
+        </p>
+      </motion.div>
+
+      <motion.div 
+        className="absolute top-[550px] left-[-1]  -translate-x-1/2 w-[390px] text-center z-10"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8 }}
+      >
+        <p className="mb-8 font-cafe24 text-[16px] leading-relaxed text-white">
+        Q)가격이 비싼가요?
+        <br />
+        A)대형 로봇 랩 운영 비용의 1/10 가격으로,<br />압도적인 효과를 낼 수 있습니다.
+        </p>
+      </motion.div>
+
+    </section>
+
+    </>
   )
 }

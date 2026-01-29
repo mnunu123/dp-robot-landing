@@ -15,40 +15,26 @@ export default function CustomMade() {
     <section className="section-mobile min-h-screen relative overflow-hidden bg-black">
       {/* 1. 배경 그라디언트 */}
       <div 
-        className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(to bottom, #060606 20%, #2a2a2a 50%, #060606 85%)'
-        }}
-      />
-      
-      {/* 2. 왼쪽 장식 원 - 강제로 왼쪽 벽에 붙이기 */}
-      <div 
-        // [수정] left-[-150px]를 사용하여 400px 너비의 원을 왼쪽 벽 바깥으로 확실히 밀어냈습니다.
-        // 이렇게 하면 빛의 중심이 왼쪽 벽 끝에 걸려 은은하게 퍼집니다.
-        className="absolute top-[35%] left-[-150px] w-[400px] h-[400px] z-10 pointer-events-none"
-      >
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#eb2fde]/50 to-[#00f2fe]/20 blur-[80px] opacity-70" />
-      </div>
+          className="w-full h-full rounded-full opacity-200"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(200,200,200,0.2) 40%, transparent 70%)',
+            filter: 'blur(30px)'
+          }}
+        />
+     
 
       {/* 3. 상단 텍스트 (참고 이미지 위치) */}
       <div className="relative z-30 pt-24 px-8 text-center animate-fade-in">
+      <motion.div className="text-center mb-12" {...fadeInUp}>
         <p className="mb-8 font-cafe24 text-[13px] leading-relaxed text-whited">
           "해외 사례 속 그 독보적인 움직임, 그대로 가져오고 싶으셨나요?
         <br />
           상상하시던 디자인과 기능을 그대로"
         </p>
+        </motion.div>
       </div>
 
-      {/* 4. 중앙 제품 이미지 (투명도 낮춰 배경처럼 활용) */}
-      <div className="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] z-0 opacity-20">
-        <Image
-          src="/images/custom-product.png"
-          alt="맞춤 제작 제품"
-          fill
-          className="object-contain grayscale"
-          sizes="320px"
-        />
-      </div>
+
 
       {/* 5. 하단 메인 강조 문구 */}
       <div className="absolute bottom-[40%] inset-x-0 z-30 px-6 text-center">

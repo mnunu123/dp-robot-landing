@@ -4,7 +4,6 @@ import {
   BrandIntro,
   DeadSpace,
   BrandShowcase,
-  WhyKinetic,
   KineticTrend,
   BrandMessage,
   CustomMade,

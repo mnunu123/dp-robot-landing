@@ -74,9 +74,9 @@ export default function Gallery() {
           viewport={{ once: false }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <p className="font-[var(--font-cafe24)] text-[14px] leading-relaxed text-white ">
+          <p className="font-[var(--font-cafe24)] text-[14px] leading-relaxed text-white">
           "그리고 국내뿐만 아니라 현재 해외 다양한분야에서도<br />
-            <span className="text-[#ff6262] text-[17px]">'키네틱아트'</span>로 활용하고 있습니다."
+            <span className="text-[#ff6262] text-[16px] font-cafe24">'키네틱아트'</span>를 활용하고 있습니다."
           </p>
                   
         <div className="absolute top-[130px] left-1/2 -translate-x-1/2 text-white text-[81px] font-medium leading-none">.</div>
@@ -106,15 +106,15 @@ export default function Gallery() {
       </div>
       {/* 하단 텍스트 영역 */}
       <motion.div 
-          className="absolute bottom-[200px] left-6 -translate-x-1/2 w-[340px] text-center"
+          className="absolute bottom-[200px] left-0.8 -translate-x-1/2 w-[390px] text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.8, delay: 0.2 }} // 이미지보다 살짝 늦게 등장
         >
-          <p className="fmb-8 font-cafe24 text-[14px] leading-relaxed text-white">
-            "2023년 해외 리테일 <span className="text-[#eb2fde] font-bold text-center">저명 저널 연구</span>에 따르면, <br />
-            키네틱아트를 활용한 매장 디자인은 고객 경험과 브랜드 경험을<br /> 동시에 최적화하는 핵심 요소로 확인되었습니다."
+          <p className="font-serif text-[14px] text-white font-normal text-center mt-20">
+            "2023년 해외 리테일 <span className="text-[#eb2fde] font-cafe24 text-center">저명 저널 연구</span>에 따르면, <br />
+            키네틱아트를 활용한 매장 디자인은 고객 경험과 브랜드 경험을<br /> 동시에 최적화하는 핵심 요소로 발표되었습니다."
           </p>
         </motion.div>
     </section>
