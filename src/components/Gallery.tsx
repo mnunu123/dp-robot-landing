@@ -104,20 +104,106 @@ export default function Gallery() {
         <div className="h-[20px]" /> 
         <MarqueeRow videos={bottomRowVideos} reverse />
       </div>
-      {/* 하단 텍스트 영역 */}
       <motion.div 
-          className="absolute bottom-[200px] left-0.8 -translate-x-1/2 w-[390px] text-center"
+          className="absolute top-[440px] right-[-30px] w-[180px] h-[180px] z-10"
+          animate={{ 
+            y: [0, -10, 0],
+            rotate: [0, 5, 0]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <Image
+            src="/images/kinetic-object.png"
+            alt="키네틱 오브제"
+            fill
+            className="object-contain"
+            sizes="180px"
+          />
+        </motion.div>
+         {/* 하단 뉴스 헤드라인 */}
+         <motion.div 
+          className="absolute bottom-[150px] left-[19px] -translate-x-1/2 w-[350px] h-[23px] z-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          transition={{ duration: 0.8, delay: 0.2 }} // 이미지보다 살짝 늦게 등장
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <p className="font-serif text-[14px] text-white font-normal text-center mt-20">
-            "2023년 해외 리테일 <span className="text-[#eb2fde] font-cafe24 text-center">저명 저널 연구</span>에 따르면, <br />
-            키네틱아트를 활용한 매장 디자인은 고객 경험과 브랜드 경험을<br /> 동시에 최적화하는 핵심 요소로 발표되었습니다."
+          <Image
+            src="/images/daelim-news.png"
+            alt="대림창고 오픈 6일 만에 거래액 6억 돌파"
+            fill
+            className="object-contain"
+            sizes="2000px"
+          />
+        </motion.div>
+      
+    </section>
+    {/* 첫 번째 섹션 - 키네틱 트렌드 검색 데이터 */}
+      <section className="section-mobile min-h-screen relative overflow-hidden">
+        <div 
+          className="absolute inset-0"
+          style={{  background: 'linear-gradient(to top,rgb(16, 16, 16) 0%, #666666 50%,rgb(16, 16, 16) 100%)'}}
+        />
+<div className="absolute inset-0 bg-black/30" />
+
+                {/* 상단 텍스트 */}
+        <motion.div 
+          className="absolute top-[45px] left-[27px] -translate-x-1/2 w-[342px] text-center z-10"
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8 }}
+        >
+          <p className="mb-8 font-cafe24 text-[14px] leading-relaxed text-white">
+            키네틱 아트는 성수동 대림창고나 광주 이이남스튜디오처럼
+            <br />
+            <span className="text-[#eb2fde] text-[18x]">대형 카페 인테리어</span>
+            
+            <span className="text-[14px]">로 활용되어 화제가 되기도 했습니다.</span>
           </p>
         </motion.div>
-    </section>
+
+        {/* 대림창고 이미지 */}
+        <motion.div 
+          className="absolute top-[149px] left-[15px] -translate-x-1/2 w-[358px] h-[303px] z-10"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <Image
+            src="/images/daelim-interior.png"
+            alt="성수동 대림창고 키네틱 아트 인테리어"
+            fill
+            className="object-cover"
+            sizes="358px"
+          />
+        </motion.div>
+
+        {/* 모나무르 카페 이미지 */}
+        <motion.div 
+          className="absolute top-[500px] left-[15px] -translate-x-1/2 w-[358px] h-[235px] z-10"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <Image
+            src="/images/eineun-studio.jpg"
+            alt="광주 이이남 카페 키네틱 아트"
+            fill
+            className="object-cover"
+            sizes="358px"
+          />
+        </motion.div>
+
+       
+      </section>
+
 </>
     
   )

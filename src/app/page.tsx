@@ -33,8 +33,8 @@ export default function Home() {
 
       
 
-            {/* Gallery - 해외 키네틱 아트 사례 */}
-            <Gallery />
+      {/* Gallery - 해외 키네틱 아트 사례 */}
+       <Gallery />
       
       {/* Kinetic Trend - 키네틱 아트 트렌드 및 사례 */}
       <KineticTrend />

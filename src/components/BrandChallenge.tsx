@@ -23,7 +23,7 @@ export default function BrandChallenge() {
           background: 'linear-gradient(to bottom, #533820 0%,rgb(66, 5, 5) 40%, #000000 80%)'
         }}
       />
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/50" />
       {/* 노이즈 오버레이 */}
       <div 
         className="absolute inset-0"
@@ -57,10 +57,8 @@ export default function BrandChallenge() {
           viewport={{ once: false }}
           transition={{ duration: 0.8 }}
         >
-          <p className="font-[var(--font-cafe24)] text-[14px] leading-relaxed text-white ">
-          "매 시즌 수백만 원을 들여 디스플레이를 바꿔도, 
-          <br />
-          정작 고객들은 스마트폰만 보며 지나치고 있진 않나요?"
+          <p className="font-[var(--font-cafe24)] text-[12px] leading-relaxed text-white ">
+          "시즌마다 수백만 원의 소품비를 쏟아부어도, 정작 돌아오는 건 '좋아요' 몇 개뿐인 무미건조한 반응은 아니었나요?"
           </p>
         </motion.div>
 
@@ -72,9 +70,12 @@ export default function BrandChallenge() {
           viewport={{ once: false }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-         <p className="font-[var(--font-cafe24)] text-[14px] leading-relaxed text-white">
-         <br /> <br />단순한 고정형 마네킹이나 포스터는 <br />이제 익숙함을 넘어 지루함이 되었습니다.
+         <p className="font-[var(--font-cafe24)] text-[12px] leading-relaxed text-white">
+         "남들이 다 하는 예쁜 소품만으로는 부족합니다.<br /> 진짜 차별화는 '흔함'을 깨는 낯선 감각, 즉 역동성에서 시작됩니다."
   <br /><br /><br /><br /><br />
+  "단순한 전시를 넘어 고객의 스마트폰을 들게 만드세요.<br /> 브랜드의 철학이 담긴 키네틱 퍼포먼스가<br />당신의 매장을 줄 서는 랜드마크로 바꿉니다."
+<br /><br /><br /><br /><br />
+
   고객의 시선이 머무는 곳에 <br />브랜드의 철학을 담은{' '}
   <motion.span
     className="inline-block font-bold" // 1. inline-block 추가 (필수!)

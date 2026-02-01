@@ -6,35 +6,48 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
+    // 초기 실행 시 자동 재생 시도 (브라우저 정책상 처음엔 muted 상태여야 할 수 있음)
     if (videoRef.current) {
-      videoRef.current.play().catch(() => {})
+      videoRef.current.play().catch(() => {
+        console.log("자동 재생이 차단되었습니다. 사용자 상호작용이 필요할 수 있습니다.")
+      })
     }
   }, [])
+
+  // 비디오가 끝났을 때 실행될 함수
+  const handleVideoEnd = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = true; // 소리 끄기
+      videoRef.current.play();       // 다시 재생
+    }
+  }
 
   return (
     <section className="section-mobile h-[844px] relative">
       {/* 배경 동영상 - 전체 화면 */}
       <video
-        ref={videoRef}
-        autoPlay
-loop
-muted
-        playsInline
-        preload="auto"
-        className="absolute inset-0 h-full w-full object-cover"
-      >
-        <source src="/videos/hero-video.mp4" type="video/mp4" />
-      </video>
+  ref={videoRef}
+  autoPlay
+  muted // true로 변경
+  playsInline
+  onEnded={handleVideoEnd}
+  preload="auto"
+  className="absolute inset-0 h-full w-full object-cover"
+>
+  <source src="/videos/hero-video.mp4" type="video/mp4" />
+</video>
       
 
       {/* 어둠 필터 */}
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/75" />
+
+      
       
       {/* 상단 텍스트 */}
             {/* 실제 콘텐츠 */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        <p className="mb-8 font-cafe24 text-[14px] leading-relaxed text-white font-normal   ">
-        <span className="font-normal size-[18px]">"움직이는 예술, DP 로봇으로 고객의 발걸음을 멈추게 하세요."</span>
+        <p className="mb-8 font-euljiro  text-[13px] leading-relaxed text-white font-normal   ">
+        <span className="font-normal size-[15px]">"움직이는 예술" <br />"키네틱아트 로봇으로 고객의 발걸음을 멈추게 하세요."</span>
                     <br />
                     <br />
                     <br />
@@ -56,11 +69,11 @@ muted
                     <br />
                     <br />
                     <br />
-                    "우리는 감각적인 브랜드가 공간의 경험을 혁신하고, 
+                    "우리는 매장의 정체되어있는 공간을 활성화하여, 
                     <br />
-                    체류 시간을 늘리며, SNS 바이럴을 극대화할 수 있도록
+                    고객의 체류 시간을 늘리며, SNS 바이럴을 극대화할 수 있도록
                     <br />
-                    맞춤형 키네틱 DP 로봇을 제공합니다."
+                    맞춤형 키네틱아트 로봇을 제공합니다."
         </p>
       </div>
       

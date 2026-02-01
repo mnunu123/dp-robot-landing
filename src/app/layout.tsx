@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google' // 라이브러리 추가
 import './globals.css'
 
 const inter = Inter({ 
@@ -55,6 +56,8 @@ export default function RootLayout({
         <main className="flex flex-col items-center">
           {children}
         </main>
+        {/* GA4 측정 ID를 여기에 넣으세요 */}
+        <GoogleAnalytics gaId="G-F13SJ2EC9Y" /> 
       </body>
     </html>
   )
