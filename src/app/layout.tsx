@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Noto_Sans_KR, Poppins } from 'next/font/google'
-import { GoogleAnalytics } from '@next/third-parties/google' // 라이브러리 추가
+import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script' // ✅ Script 컴포넌트 추가
 import './globals.css'
 
 const inter = Inter({ 
@@ -42,6 +43,17 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${inter.variable} ${notoSansKR.variable} ${poppins.variable}`}>
       <head>
+        {/* Microsoft Clarity 추적 스크립트 추가 */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "vbhpk0gwqa");
+          `}
+        </Script>
+
         {/* 배민 을지로체 CDN */}
         <link 
           rel="preload"
@@ -63,7 +75,8 @@ export default function RootLayout({
         <main className="flex flex-col items-center">
           {children}
         </main>
-        {/* GA4 측정 ID를 여기에 넣으세요 */}
+        
+        {/* GA4 측정 ID */}
         <GoogleAnalytics gaId="G-F13SJ2EC9Y" /> 
       </body>
     </html>

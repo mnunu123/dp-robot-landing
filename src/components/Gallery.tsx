@@ -111,7 +111,7 @@ export default function Gallery() {
             rotate: [0, 5, 0]
           }}
           transition={{ 
-            duration: 4,
+            duration: 1000,
             repeat: Infinity,
             ease: "easeInOut"
           }}
