@@ -1,11 +1,18 @@
 import type { Metadata } from 'next'
-import { Inter, Poppins } from 'next/font/google'
+import { Inter, Noto_Sans_KR, Poppins } from 'next/font/google'
 import { GoogleAnalytics } from '@next/third-parties/google' // 라이브러리 추가
 import './globals.css'
 
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+})
+
+const notoSansKR = Noto_Sans_KR({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-noto-sans-kr',
   display: 'swap',
 })
 
@@ -33,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ko" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="ko" className={`${inter.variable} ${notoSansKR.variable} ${poppins.variable}`}>
       <head>
         {/* 배민 을지로체 CDN */}
         <link 
@@ -52,7 +59,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className={`${inter.className} bg-black`}>
+      <body className={`${notoSansKR.className} bg-black`}>
         <main className="flex flex-col items-center">
           {children}
         </main>

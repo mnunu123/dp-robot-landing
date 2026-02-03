@@ -133,7 +133,7 @@ export default function BrandShowcase() {
             {/* 오버레이 텍스트 */}
             {video.overlayText && (
               <div className="absolute top-[20px] left-0 right-0 px-3 z-10">
-                <p className="text-white text-[12px] font-medium leading-tight text-center">
+                <p className="text-white text-[14px] font-medium leading-tight text-center">
                   {video.overlayText}
                 </p>
               </div>
@@ -164,12 +164,9 @@ export default function BrandShowcase() {
         viewport={{ once: false }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        <p className="font-[var(--font-cafe24)] text-[14px] leading-relaxed text-white">
-        현재 젠틀몬스터와 아더에러는 
-
-        <br /> 방문자에게
-        
-            <span className="text-[#ff6262] text-[16px] font-cafe24"> "경험"</span>을 판매하고 있습니다.
+        <p className="font-[var(--font-cafe24)] text-[17px] leading-[1.7] text-white text-readable mx-auto">
+        현재 젠틀몬스터와 아더에러는 방문자에게<br />
+        <span className="text-[#ff6262] text-[19px] font-cafe24">"경험"</span>을 판매하고 있습니다.
         </p>
       </motion.div>
 

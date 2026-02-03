@@ -37,7 +37,7 @@ export default function DeadSpace() {
           </motion.div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
           <motion.div className="text-center mb-8 mt-40" {...fadeInUp}>
-            <p className="font-serif text-[18px] text-white italic">
+            <p className="font-serif text-[20px] text-white italic">
               "A stagnant space is a <span className="text-[#ff6262] not-italic font-bold">dead</span> space."
             </p>
           </motion.div>
@@ -47,7 +47,7 @@ export default function DeadSpace() {
             {...fadeInUp}
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
           >
-            <p className="font-[var(--font-cafe24)] text-[13px] text-white leading-relaxed">
+            <p className="font-[var(--font-cafe24)] text-[16px] text-white leading-[1.7] text-readable mx-auto">
               "멈춰있는 공간은 <span className="text-[#ff6262]">죽은</span> 공간이다."
             </p>
           </motion.div>

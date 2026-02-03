@@ -98,7 +98,7 @@ export default function ApplicationForm() {
       </div>
 
       <div className="px-5 pt-24">
-        <h2 className="font-poppins font-bold text-[30px] text-black leading-[1.3] tracking-[-0.3px] mb-12">
+        <h2 className="font-poppins font-bold text-[32px] text-black leading-[1.3] tracking-[-0.3px] mb-12">
           Application form
         </h2>
 
@@ -106,7 +106,7 @@ export default function ApplicationForm() {
           <div className="flex flex-col gap-2">
             <label
               htmlFor="name"
-              className="font-inter text-[14px] text-black"
+              className="font-inter text-[16px] text-black"
             >
               이름
             </label>
@@ -124,14 +124,14 @@ export default function ApplicationForm() {
               disabled={isSubmitting}
             />
             {errors.name && (
-              <p className="text-red-500 text-[12px]">{errors.name}</p>
+              <p className="text-red-500 text-[14px]">{errors.name}</p>
             )}
           </div>
 
           <div className="flex flex-col gap-2">
             <label
               htmlFor="phone"
-              className="font-inter text-[14px] text-black"
+              className="font-inter text-[16px] text-black"
             >
               연락처
             </label>
@@ -153,14 +153,14 @@ export default function ApplicationForm() {
               maxLength={13}
             />
             {errors.phone && (
-              <p className="text-red-500 text-[12px]">{errors.phone}</p>
+              <p className="text-red-500 text-[14px]">{errors.phone}</p>
             )}
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full h-[56px] bg-black text-white font-inter font-semibold text-[16px] rounded-[10px] transition-all duration-300 mt-8 ${
+            className={`w-full h-[56px] bg-black text-white font-inter font-semibold text-[18px] rounded-[10px] transition-all duration-300 mt-8 ${
               isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-800'
             }`}
           >
@@ -169,7 +169,7 @@ export default function ApplicationForm() {
 
           {submitStatus === 'success' && (
             <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
-              <p className="text-green-700 text-[14px]">
+              <p className="text-green-700 text-[16px]">
                 신청이 완료되었습니다. 곧 연락드리겠습니다!
               </p>
             </div>
@@ -177,15 +177,15 @@ export default function ApplicationForm() {
 
           {submitStatus === 'error' && (
             <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg text-center">
-              <p className="text-red-700 text-[14px]">
+              <p className="text-red-700 text-[16px]">
                 오류가 발생했습니다. 다시 시도해주세요.
               </p>
             </div>
           )}
         </form>
 
-        <p className="text-[11px] text-gray-400 text-center mt-8 leading-relaxed">
-          신청하기 버튼을 누르시면 개인정보 수집 및 이용에 동의하는 것으로 간주됩니다.
+        <p className="text-[14px] text-gray-500 text-center mt-8 leading-relaxed">
+          신청하기 버튼을 누르시면 개인정보 수집 및 이용에<br />동의하는 것으로 간주됩니다.
         </p>
       </div>
     </section>

@@ -43,10 +43,9 @@ export default function BrandChallenge() {
           viewport={{ once: false }}
           transition={{ duration: 0.8 }}
         >
-          <p className="font-[var(--font-cafe24)] text-[16px] leading-relaxed text-white">
-            "키네틱아트(Kinetic Art)" : 
-            
-            <br /><span className="text-[#ff6262] text-[14px]">'움직임(Kinesis)'을 본질로 하는 예술'</span> <br /> <br /> <br /> <br /> <br /> 
+          <p className="font-[var(--font-cafe24)] text-[18px] leading-[1.7] text-white text-readable mx-auto">
+            "키네틱아트(Kinetic Art)" :<br />
+            <span className="text-[#ff6262] text-[16px]">'움직임(Kinesis)'을 본질로 하는 예술'</span>
           </p>
         </motion.div>
 
@@ -57,8 +56,8 @@ export default function BrandChallenge() {
           viewport={{ once: false }}
           transition={{ duration: 0.8 }}
         >
-          <p className="font-[var(--font-cafe24)] text-[12px] leading-relaxed text-white ">
-          "시즌마다 수백만 원의 소품비를 쏟아부어도, 정작 돌아오는 건 '좋아요' 몇 개뿐인 무미건조한 반응은 아니었나요?"
+          <p className="font-[var(--font-cafe24)] text-[13px] leading-[1.7] text-white text-readable mx-auto w-[390px]">
+          "시즌마다 수백만 원의 광고비를 쏟아부어도,<br />정작 돌아오는 건 '좋아요' 몇 개뿐인 무미건조한 반응은 아니었나요?"
           </p>
         </motion.div>
 
@@ -70,13 +69,12 @@ export default function BrandChallenge() {
           viewport={{ once: false }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-         <p className="font-[var(--font-cafe24)] text-[12px] leading-relaxed text-white">
-         "남들이 다 하는 예쁜 소품만으로는 부족합니다.<br /> 진짜 차별화는 '흔함'을 깨는 낯선 감각, 즉 역동성에서 시작됩니다."
-  <br /><br /><br /><br /><br />
-  "단순한 전시를 넘어 고객의 스마트폰을 들게 만드세요.<br /> 브랜드의 철학이 담긴 키네틱 퍼포먼스가<br />당신의 매장을 줄 서는 랜드마크로 바꿉니다."
-<br /><br /><br /><br /><br />
-
-  고객의 시선이 머무는 곳에 <br />브랜드의 철학을 담은{' '}
+         <p className="font-[var(--font-cafe24)] text-[13px] leading-[1.7] text-white text-center mx-auto">
+         "남들이 다 하는 예쁜 소품만으로는 부족합니다.<br />진짜 차별화는 '흔함'을 깨는 낯선 감각,<br />즉 역동성에서 시작됩니다."<br />
+         <span className="block my-6" />
+         "단순한 전시를 넘어 고객의 스마트폰을 들게 만드세요.<br /> <br />브랜드의 철학이 담긴 키네틱 퍼포먼스가<br />당신의 매장을 줄 서는 랜드마크로 바꿉니다."
+         <span className="block my-6" />
+         <br />고객의 시선이 머무는 곳에<br />브랜드의 철학을 담은{' '}
   <motion.span
     className="inline-block font-bold" // 1. inline-block 추가 (필수!)
     animate={{ 

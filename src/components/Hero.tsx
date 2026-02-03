@@ -28,14 +28,15 @@ export default function Hero() {
       <video
   ref={videoRef}
   autoPlay
-  muted // true로 변경
+loop   // true로 변경
+muted
   playsInline
   onEnded={handleVideoEnd}
   preload="auto"
-  className="absolute inset-0 h-full w-full object-cover"
+  className="absolute inset-0 h-full w-full object-cover opacity-70"
 >
   <source src="/videos/hero-video.mp4" type="video/mp4" />
-</video>
+</video> 
       
 
       {/* 어둠 필터 */}
@@ -46,34 +47,24 @@ export default function Hero() {
       {/* 상단 텍스트 */}
             {/* 실제 콘텐츠 */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        <p className="mb-8 font-euljiro  text-[13px] leading-relaxed text-white font-normal   ">
-        <span className="font-normal size-[15px]">"움직이는 예술" <br />"키네틱아트 로봇으로 고객의 발걸음을 멈추게 하세요."</span>
+        <p className="mb-8 font-euljiro text-[13px] leading-[1.7] text-white font-normal  mx-auto">
+        <span className="font-normal text-[18px] block mb-2">"움직이는 예술"</span>
+          <span className="font-normal text-[14px] block mb-10">"키네틱아트 로봇으로 고객의 발걸음을 멈추게 만듭니다."</span>
+          <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br /><br /><br />
                     <br />
                     <br />
                     <br />
                     <br />
                     <br />
                     <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    "우리는 매장의 정체되어있는 공간을 활성화하여, 
-                    <br />
-                    고객의 체류 시간을 늘리며, SNS 바이럴을 극대화할 수 있도록
-                    <br />
-                    맞춤형 키네틱아트 로봇을 제공합니다."
+          "우리는 매장의 정체되어 있는 공간을 활성화하여, 고객의 체류 시간을 늘리며 SNS 바이럴을 극대화할 수 있도록
+          맞춤형 키네틱아트 로봇을 제공합니다."
         </p>
       </div>
       

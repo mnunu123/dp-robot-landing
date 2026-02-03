@@ -25,6 +25,7 @@
   --font-cafe24: 'Cafe24 Oneprettynight', sans-serif;
   --font-inter: 'Inter', sans-serif;
   --font-poppins: 'Poppins', sans-serif;
+  --font-noto-sans-kr: 'Noto Sans KR', sans-serif;
 }
 
 /* 스크롤바 스타일 */
@@ -45,14 +46,22 @@
   background: #888;
 }
 
-/* 기본 스타일 */
+/* 기본 스타일 - 가독성 향상을 위한 기본 글자 크기 */
 html {
   scroll-behavior: smooth;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 17px;
+  }
 }
 
 body {
   @apply bg-black text-white antialiased;
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
 /* 폰트 클래스 */
@@ -62,6 +71,10 @@ body {
 
 .font-euljiro {
   font-family: var(--font-euljiro);
+}
+
+.font-noto {
+  font-family: var(--font-noto-sans-kr), sans-serif;
 }
 
 /* 섹션 공통 스타일 */
@@ -90,4 +103,11 @@ body {
 /* 텍스트 그라디언트 */
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-[#ff6262] to-[#eb2fde];
+}
+
+/* 읽기 쉬운 문단 - 한글 줄바꿈 일관 (단어 중간 끊김 방지, 적당한 줄 길이) */
+.text-readable {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  max-width: 21em;
 }

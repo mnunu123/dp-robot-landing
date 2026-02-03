@@ -59,28 +59,18 @@ export default function BrandIntro() {
       </div>
 <div className="relative z-10 h-full flex flex-col items-center justify-center px-15">
 
-            <p className="font-serif text-[14px] text-white font-normal text-center mt-20">
-              젠틀몬스터와 아더에러를 들어온적 있으신가요?
-              <br />
-
+            <p className="font-serif text-[17px] text-white font-normal text-center mt-20 text-readable mx-auto leading-[1.7]">
+              젠틀몬스터와 아더에러를 들어온 적 있으신가요?
             </p>
 
         
         {/* 두 번째 텍스트 */}
         <div className="text-center mt-40 mb-16">
-        <motion.div className="text-center mb-12" {...fadeInUp}>
-          <p className="font-serif text-[14px] text-white font-normal text-center mt-20">
-            젠틀몬스터의 철학은 
-            <br />
-            "세상을 놀라게 할 새로움"
-            <br />
-            <br />
-            <br />
-            <br />
-            아더에러의 철학은 
-            <br />
-            "오류(Error)에서 성장, 불완전함 재해석"이라고 합니다.
-            
+        <motion.div className="text-center mb-10" {...fadeInUp}>
+          <p className="font-serif text-[14px] text-white font-normal text-center mt-10 text-readable mx-auto leading-[1.7]">
+            젠틀몬스터의 철학은 "세상을 놀라게 할 새로움"<br /> <br />
+            <span className="block mt-4" />
+            아더에러의 철학은 "오류(Error)에서 성장, 불완전함 재해석"이라고 합니다.
           </p>
           </motion.div>
       
@@ -95,9 +85,8 @@ export default function BrandIntro() {
         >
           <div className="text-center mt-40">
 
-<p className="mb-8 font-cafe24 text-[15px] leading-relaxed text-white">
-  그들은 각자다른 철학을 <span className="text-[#ff6262]">키네틱아트</span>라는 수단을 통해
-  <br />
+<p className="mb-8 font-cafe24 text-[17px] leading-[1.7] text-white text-readable mx-auto">
+  그들은 각자 다른 철학을 <span className="text-[#ff6262]">키네틱아트</span>라는 수단을 통해<br />
   자신만의 색상을 표현하고 있습니다.
 </p>
 

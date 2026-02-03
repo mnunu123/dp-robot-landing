@@ -74,9 +74,9 @@ export default function Gallery() {
           viewport={{ once: false }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <p className="font-[var(--font-cafe24)] text-[14px] leading-relaxed text-white">
-          "그리고 국내뿐만 아니라 현재 해외 다양한분야에서도<br />
-            <span className="text-[#ff6262] text-[16px] font-cafe24">'키네틱아트'</span>를 활용하고 있습니다."
+          <p className="font-[var(--font-cafe24)] text-[17px] leading-[1.5] text-white text-readable mx-auto">
+          "그리고 국내뿐만 아니라 현재 해외 다양한 분야에서도 
+          <span className="text-[#ff6262] text-[18px] font-cafe24">'키네틱아트'</span>를 활용하고 있습니다."
           </p>
                   
         <div className="absolute top-[130px] left-1/2 -translate-x-1/2 text-white text-[81px] font-medium leading-none">.</div>
@@ -152,18 +152,15 @@ export default function Gallery() {
 
                 {/* 상단 텍스트 */}
         <motion.div 
-          className="absolute top-[45px] left-[27px] -translate-x-1/2 w-[342px] text-center z-10"
+          className="absolute top-[45px] left-[7] -translate-x-1/2 w-[342px] text-center z-10"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.8 }}
         >
-          <p className="mb-8 font-cafe24 text-[14px] leading-relaxed text-white">
-            키네틱 아트는 성수동 대림창고나 광주 이이남스튜디오처럼
-            <br />
-            <span className="text-[#eb2fde] text-[18x]">대형 카페 인테리어</span>
-            
-            <span className="text-[14px]">로 활용되어 화제가 되기도 했습니다.</span>
+          <p className="mb-8 font-cafe24 text-[17px] leading-[1.7] text-white mx-auto w-[390px]">
+            키네틱 아트는 성수동 대림창고나 광주 이이남스튜디오처럼<br />
+            <span className="text-[#eb2fde] text-[19px]">대형 카페 인테리어</span>로 활용되어 화제가 되기도 했습니다.
           </p>
         </motion.div>
 

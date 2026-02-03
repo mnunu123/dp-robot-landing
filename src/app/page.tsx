@@ -54,10 +54,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full max-w-[390px] bg-white py-8 px-5">
         <div className="text-center">
-          <p className="text-[12px] text-gray-500">
-            © 2025 DP로봇. All rights reserved.
+          <p className="text-[14px] text-gray-600">
+            © DP로봇. All rights reserved.
           </p>
-          <p className="text-[11px] text-gray-400 mt-2">
+          <p className="text-[13px] text-gray-500 mt-2">
             키네틱 아트 & 동적 오브제 맞춤 제작
           </p>
         </div>
