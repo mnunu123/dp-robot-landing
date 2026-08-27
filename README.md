@@ -7,6 +7,19 @@
 - **분석**: Google Analytics (`@next/third-parties`)
 - **폼 연동**: 신청 폼 → Google Apps Script Web App → Google Sheets 저장 (`googleapis`)
 
+## 실제 구동 화면
+
+`npm run dev`로 직접 실행한 뒤 캡처한 실제 화면입니다 (모바일 390px 폭 기준).
+
+![히어로 섹션](screenshots/01-hero.png)
+*히어로(`Hero`) — 동영상 배경 위에 "움직이는 예술" 카피와 브랜드 도전 메시지.*
+
+![브랜드 소개 섹션](screenshots/02-brand-intro.png)
+*브랜드 소개(`BrandIntro`) — 젠틀몬스터·아더에러 사례를 이미지 캐러셀로 보여주며 "경험을 판매한다"는 레퍼런스 제시.*
+
+![신청 폼](screenshots/03-application-form.png)
+*신청 폼(`ApplicationForm`) — 이름/연락처 입력 후 제출하면 Google Sheets로 저장되는 리드 수집 폼.*
+
 ## 페이지 구성
 
 `src/app/page.tsx` 기준 섹션 순서 (모바일 우선, 최대 폭 390px):
